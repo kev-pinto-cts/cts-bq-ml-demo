@@ -1,0 +1,48 @@
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+name = "{{ cookiecutter.project_name }}"
+version = "0.1.0"
+description = "{{ cookiecutter.description }}"
+authors = ["{{ cookiecutter.authors }}"]
+license = "{{ cookiecutter.license }}"
+
+[tool.poetry.scripts]
+"{{ cookiecutter.project_name }}" = "{{ cookiecutter.project_name }}:main"
+
+[tool.poetry.dependencies]
+python = "==3.10.6"
+fire = ">=0.4.0"
+PyYAML = "^6.0"
+attrs = "^22.1.0"
+cattrs = "^22.2.0"
+pendulum = "^2.1.2"
+cdktf = "^0.14.1"
+cdktf-cdktf-provider-google = "^4.0.1"
+cdktf-cdktf-provider-time = "^4.0.0"
+k8s = "^0.21.4"
+apache-airflow = {version = "2.4.3", extras = ["cncf", "gcp"]}
+kubernetes = "^25.3.0"
+
+
+[tool.poetry.dev-dependencies]
+black = "^21.6b0"
+autopep8 = "^1.5.7"
+pytest = "^6.2.4"
+coverage = {extras = ["toml"], version = "^5.5"}
+pytest-cov = "^2.12.1"
+ipython = "^8.7.0"
+pre-commit = "^2.20.0"
+
+
+[tool.coverage.paths]
+source = ["{{ cookiecutter.project_name }}"]
+
+[tool.coverage.run]
+branch = true
+source = ["{{ cookiecutter.project_name }}"]
+
+[tool.coverage.report]
+show_missing = true

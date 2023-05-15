@@ -1,0 +1,26 @@
+{
+  "project_name": "cts_data_engineering",
+  "license": "MIT",
+  "description": "Python package build from cookiecutter",
+  "authors": [
+    "CTS"
+  ],
+  "gcp_project": "cookie-cutter-testing",
+  "location": "europe-west2",
+  "airflow_version": "2.3.3",
+  "include_terraform": true,
+  "include_testdata": true,
+  "include_pyspark": true,
+  "include_dbt": true,
+  "include_buildimages": true,
+  "_copy_without_render": [
+    "dbt",
+    "build_images",
+    "credentials",
+    "metadata",
+    "pipelines",
+    "pyspark",
+    "scripts",
+    "tests"
+  ]
+}
