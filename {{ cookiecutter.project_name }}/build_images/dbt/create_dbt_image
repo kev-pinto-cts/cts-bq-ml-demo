@@ -1,4 +1,0 @@
-#!/bin/bash
-set -eu
-
-docker build . -t "eu.gcr.io/${PROJECT_ID}/dbt"
