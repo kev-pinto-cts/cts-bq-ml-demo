@@ -1,26 +1,35 @@
 {
-  "project_name": "cts_data_engineering",
-  "license": "MIT",
-  "description": "Python package build from cookiecutter",
-  "authors": [
-    "CTS"
+  "customer_name": "cts",
+  "project_name": "{{ cookiecutter.customer_name }}-bqml-demo",
+  "repo_owner": "Cloud-Technology-Solutions",
+  "billing_account": "00976C-63A0B7-F8AB7D",
+  "org_id": "1048886479208",
+  "folder_id": "965066503025",
+  "vcs": [
+    "github",
+    "gitlab",
+    "bitbucket-cloud"
   ],
-  "gcp_project": "cookie-cutter-testing",
-  "location": "europe-west2",
-  "airflow_version": "2.3.3",
-  "include_terraform": true,
-  "include_testdata": true,
-  "include_pyspark": true,
-  "include_dbt": true,
-  "include_buildimages": true,
-  "_copy_without_render": [
-    "dbt",
-    "build_images",
-    "credentials",
-    "metadata",
-    "pipelines",
-    "pyspark",
-    "scripts",
-    "tests"
-  ]
+  "bitbucket_username": "(none)",
+  "pipeline": [
+    "atlantis",
+    "tfc"
+  ],
+  "enable_modules_repo": false,
+  "region": "europe-west4",
+  "zone": "europe-west4-b",
+  "enable_shared_vpc": false,
+  "members": {
+    "list": []
+  },
+  "template": [
+    "cookiecutter-terraform-env-project"
+  ],
+  "envs": {
+    "list": [
+      "dev",
+      "test",
+      "prod"
+    ]
+  }
 }

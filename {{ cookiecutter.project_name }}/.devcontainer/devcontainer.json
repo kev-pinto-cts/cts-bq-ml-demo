@@ -1,0 +1,21 @@
+{
+	"name": "cookiecutter-bq-ml",
+	"image": "eu.gcr.io/cts-public-images-1/cts-standard:latest",
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"burtlo.inspec",
+				"davidanson.vscode-markdownlint",
+				"foxundermoon.shell-format",
+				"hashicorp.terraform",
+				"redhat.vscode-yaml",
+				"samuelcolvin.jinjahtml"
+			]
+		}
+	},
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {}
+	},
+	"postCreateCommand": "pip3 install -r .devcontainer/requirements.txt",
+	"postStartCommand": "pre-commit install"
+}
