@@ -6,6 +6,8 @@
 ### ChefCookbook ###
 .vagrant
 /cookbooks
+.DS_Store
+*/**/.DS_Store
 
 # Bundler
 bin/*
