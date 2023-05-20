@@ -13,7 +13,6 @@
     "atlantis",
     "tfc"
   ],
-  "enable_modules_repo": false,
   "region": "europe-west2",
   "envs": {
     "list": [
