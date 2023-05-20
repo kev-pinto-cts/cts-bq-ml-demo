@@ -28,15 +28,15 @@ terraform {
   }
 }
 
-provider "{{ cookiecutter.vcs | replace("-cloud", "") }}" {
-  {% if cookiecutter.vcs != "bitbucket-cloud" -%}
-  token = chomp(data.google_secret_manager_secret_version.access_token.secret_data)
-  {%- endif %}
-  {% if cookiecutter.vcs == "github" -%}
-  owner = "{{ cookiecutter.repo_owner }}"
-  {%- endif %}
-  {% if cookiecutter.vcs == "bitbucket-cloud" -%}
-  username = "{{ cookiecutter.bitbucket_username }}"
-  password = chomp(data.google_secret_manager_secret_version.access_token.secret_data)
-  {%- endif %}
-}
+# provider "{{ cookiecutter.vcs | replace("-cloud", "") }}" {
+#   {% if cookiecutter.vcs != "bitbucket-cloud" -%}
+#   token = chomp(data.google_secret_manager_secret_version.access_token.secret_data)
+#   {%- endif %}
+#   {% if cookiecutter.vcs == "github" -%}
+#   owner = "{{ cookiecutter.repo_owner }}"
+#   {%- endif %}
+#   {% if cookiecutter.vcs == "bitbucket-cloud" -%}
+#   username = "{{ cookiecutter.bitbucket_username }}"
+#   password = chomp(data.google_secret_manager_secret_version.access_token.secret_data)
+#   {%- endif %}
+# }
