@@ -16,8 +16,8 @@ init: ## This is init
 	@gcloud config set project ${PROJECT_ID}
 	@if [ ${BUCKET_EXISTS} -eq "0" ]; then \
         echo "Bucket ${TF_BUCKET} does not Exist and will be created"; \
-		# gcloud config set project ${PROJECT_ID}; \
 		gcloud storage buckets create gs://${TF_BUCKET} --default-storage-class=nearline --location=${REGION}; \
     else \
         echo "Bucket ${TF_BUCKET} Exists and will be used"; \
     fi
+	@sed -i "s/REPLACE-ME/${TF_BUCKET}/g" ./infra/providers.tf

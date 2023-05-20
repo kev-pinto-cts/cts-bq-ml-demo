@@ -24,7 +24,7 @@ terraform {
   }
   backend "gcs" {
     bucket = "REPLACE-ME"
-    prefix = "terraform/mgmt"
+    prefix = "terraform/bqml"
   }
 }
 
