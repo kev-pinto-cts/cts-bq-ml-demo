@@ -1,0 +1,22 @@
+[
+    {
+        "name": "service_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "service_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "sku_id",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    },
+    {
+        "name": "sku_name",
+        "type": "STRING",
+        "mode": "NULLABLE"
+    }
+]
