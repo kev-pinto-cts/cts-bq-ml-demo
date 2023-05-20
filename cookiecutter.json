@@ -1,10 +1,9 @@
 {
   "customer_name": "cts",
+  "gcp_project_id": "GCPSANDBOXID",
+  "gcp_region": "europe-west2",
   "project_name": "{{ cookiecutter.customer_name }}-bqml-demo",
   "repo_owner": "Cloud-Technology-Solutions",
-  "billing_account": "00976C-63A0B7-F8AB7D",
-  "org_id": "1048886479208",
-  "folder_id": "965066503025",
   "vcs": [
     "github",
     "gitlab",

@@ -14,7 +14,15 @@
 		}
 	},
 	"features": {
-		"ghcr.io/devcontainers/features/node:1": {}
+		"ghcr.io/devcontainers/features/kubectl-helm-minikube:1": {}
+	},
+	"remoteUser": "vscode",
+	"mounts": [
+		"source=${localEnv:HOME}/.config,target=/home/vscode/.config,type=bind,consistency=cached"
+	  ],
+	"containerEnv": {
+		"GOOGLE_APPLICATION_CREDENTIALS":"/home/vscode/.config/gcloud/application_default_credentials.json",
+		"CLOUDSDK_CONFIG": "/home/vscode/.config/gcloud"
 	},
 	"postCreateCommand": "pip3 install -r .devcontainer/requirements.txt",
 	"postStartCommand": "pre-commit install"
