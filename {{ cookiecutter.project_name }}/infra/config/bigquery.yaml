@@ -11,7 +11,7 @@ bigquery:
     tables:
     - name: billing_archive
       deletion_protection: false
-      schema_file: defs/tables/billing_archive.json
+      schema_file: defs/billing_archive.json
       time_partitioning:
         type: MONTH
         field: invoice_month
@@ -19,7 +19,7 @@ bigquery:
         project: 'billing'
     - name: excluded_skus
       deletion_protection: false
-      schema_file: defs/tables/excluded_skus.json
+      schema_file: defs/excluded_skus.json
       external_data_configuration:
         autodetect: false
         source_format: CSV

@@ -12,6 +12,7 @@ BUCKET_EXISTS ?= $$(gcloud storage buckets list gs://${TF_BUCKET}* --limit=1 --f
 help: ## This is help
 	@awk 'BEGIN {FS = ":.*?## "} /^[a-zA-Z_-]+:.*?## / {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}' $(MAKEFILE_LIST)
 
+.ONESHELL:
 init: ## This is init
 	@gcloud config set project ${PROJECT_ID}
 	@if [ ${BUCKET_EXISTS} -eq "0" ]; then \
@@ -22,6 +23,12 @@ init: ## This is init
     fi
 	@sed -i "s/REPLACE-ME/${TF_BUCKET}/g" ./infra/providers.tf
 
+.ONESHELL:
 plan: init ## Terraform Plan
 	@cd infra
 	@terraform init && terraform plan
+
+.ONESHELL:
+apply: init ## Terraform apply
+	@cd ./infra
+	@terraform init && terraform apply --auto-approve

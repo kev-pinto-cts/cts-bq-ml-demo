@@ -1,6 +1,6 @@
 locals {
   default_labels = {
-    "department" : "data-engineering"
+    "department" : "finance"
   }
   bigquery           = yamldecode(file("${var.schema_file_path}/bigquery.yaml"))
   datasets_to_create = { for ds in local.bigquery.bigquery.datasets : ds.name => ds if try(ds.create, true) }
