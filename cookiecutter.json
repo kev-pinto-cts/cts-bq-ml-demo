@@ -1,6 +1,6 @@
 {
   "customer_name": "cts",
-  "gcp_project_id": "GCPSANDBOXID",
+  "gcp_project_id": "cloudsqlpoc-demo",
   "project_name": "{{ cookiecutter.customer_name }}-bqml-demo",
   "repo_owner": "Cloud-Technology-Solutions",
   "vcs": [
