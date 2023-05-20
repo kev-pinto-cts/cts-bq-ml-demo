@@ -1,7 +1,5 @@
-# PROJECT_ID ?= {{ gcp_project_id }}
-PROJECT_ID ?= 	cloudsqlpoc-demo
-# REGION ?= {{ gcp_region }}
-REGION=europe-west2
+PROJECT_ID ?= {{ cookiecutter.gcp_project_id }}
+REGION ?= {{ cookiecutter.region }}
 
 PROJECT_NUMBER ?= $$(gcloud projects list --filter="project_id:${PROJECT_ID}" --format="value(PROJECT_NUMBER)")
 TF_BUCKET ?= tf-state-bq-ml-demo-${PROJECT_NUMBER}

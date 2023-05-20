@@ -1,7 +1,6 @@
 {
   "customer_name": "cts",
   "gcp_project_id": "GCPSANDBOXID",
-  "gcp_region": "europe-west2",
   "project_name": "{{ cookiecutter.customer_name }}-bqml-demo",
   "repo_owner": "Cloud-Technology-Solutions",
   "vcs": [
@@ -15,15 +14,7 @@
     "tfc"
   ],
   "enable_modules_repo": false,
-  "region": "europe-west4",
-  "zone": "europe-west4-b",
-  "enable_shared_vpc": false,
-  "members": {
-    "list": []
-  },
-  "template": [
-    "cookiecutter-terraform-env-project"
-  ],
+  "region": "europe-west2",
   "envs": {
     "list": [
       "dev",
