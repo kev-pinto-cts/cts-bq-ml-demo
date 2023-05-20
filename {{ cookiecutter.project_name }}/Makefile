@@ -21,3 +21,7 @@ init: ## This is init
         echo "Bucket ${TF_BUCKET} Exists and will be used"; \
     fi
 	@sed -i "s/REPLACE-ME/${TF_BUCKET}/g" ./infra/providers.tf
+
+plan: init ## Terraform Plan
+	@cd infra
+	@terraform init && terraform plan
