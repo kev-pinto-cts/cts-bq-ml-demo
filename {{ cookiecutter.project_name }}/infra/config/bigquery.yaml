@@ -1,0 +1,68 @@
+bigquery:
+  datasets:
+  - name: staging
+    location: '{{ cookiecutter.region }}'
+    create: false
+    friendly_name: staging
+    description: staging
+    labels:
+      project: 'billing'
+    delete_contents_on_destroy: false
+    tables:
+    - name: billing_archive
+      deletion_protection: false
+      schema_file: defs/tables/billing_archive.json
+      time_partitioning:
+        type: MONTH
+        field: invoice_month
+      labels:
+        project: 'billing'
+    - name: excluded_skus
+      deletion_protection: false
+      schema_file: defs/tables/excluded_skus.json
+      external_data_configuration:
+        autodetect: false
+        source_format: CSV
+        source_uris:
+        - gs://billing-automation-343509-skus_bucket/excluded-skus/*.csv
+        csv_options:
+          quote: "\""
+          skip_leading_rows: 1
+    - name: currency_conversion_pull
+      deletion_protection: false
+      external_data_configuration:
+        autodetect: true
+        ignore_unknown_values: false
+        source_format: GOOGLE_SHEETS
+        source_uris:
+        - https://docs.google.com/spreadsheets/d/1S5Eq51XiQaUtSDSwA02NW7W6Daii0tedL_yf_29uSuU
+        google_sheets_options:
+          range: CONVERSION_RATES
+          skip_leading_rows: 1
+    - name: gcp_billing_data_for_salesforce_imports_uk
+      deletion_protection: false
+      external_data_configuration:
+        autodetect: true
+        ignore_unknown_values: false
+        source_format: GOOGLE_SHEETS
+        source_uris:
+        - https://docs.google.com/spreadsheets/d/1S5Eq51XiQaUtSDSwA02NW7W6Daii0tedL_yf_29uSuU
+        google_sheets_options:
+          range: UK_MASTER
+          skip_leading_rows: 1
+    - name: gcp_billing_data_for_salesforce_imports_nl
+      deletion_protection: false
+      external_data_configuration:
+        autodetect: true
+        ignore_unknown_values: false
+        source_format: GOOGLE_SHEETS
+        source_uris:
+        - https://docs.google.com/spreadsheets/d/1xpdpn8X0dALOm_nATwfrbQyV6NInTi75RKSXiZ7TUpw
+        google_sheets_options:
+          range: NL_MASTER
+          skip_leading_rows: 1
+    - name: vw_joint_master_reference
+      deletion_protection: false
+      view:
+        query_file: defs/tables/joint_master_query.sql
+        use_legacy_sql: false
