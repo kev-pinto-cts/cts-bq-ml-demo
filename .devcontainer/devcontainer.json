@@ -26,5 +26,5 @@
 		"CLOUDSDK_CONFIG": "/home/vscode/.config/gcloud"
 	},
 	"postCreateCommand": "pip3 install -r .devcontainer/requirements.txt",
-	"postStartCommand": "pre-commit install && cp -r /tmp/.ssh/* /home/vscode/.ssh"
+	"postStartCommand": "pre-commit install && cp -R /tmp/.ssh/* /home/vscode/.ssh"
 }
