@@ -4,7 +4,7 @@ resource "google_bigquery_data_transfer_config" "bq_xfer_config" {
   display_name           = "bq_xfer_config"
   location               = var.region
   data_source_id         = "cross_region_copy"
-  destination_dataset_id = "staging"
+  destination_dataset_id = google_bigquery_dataset.dataset["iowa_demo"].dataset_id
   # disabled             = false
   params = {
     source_project_id           = "bigquery-public-data"
