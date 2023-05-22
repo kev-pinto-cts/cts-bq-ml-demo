@@ -1,5 +1,0 @@
-SELECT
-    1 col1
-UNION ALL
-SELECT
-    2 col1

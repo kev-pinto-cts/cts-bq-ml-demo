@@ -9,19 +9,13 @@ bigquery:
       project: 'billing'
     delete_contents_on_destroy: false
     tables:
-    - name: billing_archive
-      deletion_protection: false
-      schema_file: defs/billing_archive.json
-      time_partitioning:
-        type: MONTH
-        field: invoice_month
-      labels:
-        project: 'billing'
-    - name: excluded_skus
-      deletion_protection: false
-      schema_file: defs/excluded_skus.json
-    - name: vw_joint_master_reference
+    - name: liquor_sales
       deletion_protection: false
       view:
-        query_file: defs/joint_master_query.sql
+        query_file: defs/vw_liquor_sales.sql
+        use_legacy_sql: false
+    - name: liquor_sales_5_liquors_filled_days
+      deletion_protection: false
+      view:
+        query_file: defs/vw_liquor_sales_5_liquors_filled_days.sql
         use_legacy_sql: false
