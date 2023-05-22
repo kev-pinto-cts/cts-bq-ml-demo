@@ -3,22 +3,5 @@
   "gcp_project_id": "cloudsqlpoc-demo",
   "project_name": "{{ cookiecutter.customer_name }}-bqml-demo",
   "repo_owner": "Cloud-Technology-Solutions",
-  "vcs": [
-    "github",
-    "gitlab",
-    "bitbucket-cloud"
-  ],
-  "bitbucket_username": "(none)",
-  "pipeline": [
-    "atlantis",
-    "tfc"
-  ],
-  "region": "europe-west2",
-  "envs": {
-    "list": [
-      "dev",
-      "test",
-      "prod"
-    ]
-  }
+  "region": "europe-west2"
 }

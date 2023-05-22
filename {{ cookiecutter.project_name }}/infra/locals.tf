@@ -1,4 +1,11 @@
 locals {
+
+  apis = ["bigquery.googleapis.com",
+          "cloudbuild.googleapis.com",
+          "bigquerydatatransfer.googleapis.com"
+        ]
+
+
   default_labels = {
     "department" : "finance"
   }

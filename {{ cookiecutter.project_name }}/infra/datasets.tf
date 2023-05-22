@@ -1,4 +1,6 @@
 resource "google_bigquery_dataset" "dataset" {
+  depends_on = [ google_project_service.enable_apis ]
+
   for_each = local.datasets_to_create
 
   dataset_id                 = each.key

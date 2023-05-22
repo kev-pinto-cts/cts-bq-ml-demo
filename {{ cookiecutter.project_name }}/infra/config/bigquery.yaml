@@ -1,6 +1,6 @@
 bigquery:
   datasets:
-  - name: staging
+  - name: iowa_demo
     location: '{{ cookiecutter.region }}'
     create: true
     friendly_name: staging

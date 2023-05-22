@@ -1,4 +1,9 @@
 resource "google_bigquery_table" "table" {
+  depends_on = [
+    google_bigquery_dataset.dataset,
+    google_bigquery_data_transfer_config.bq_xfer_config
+  ]
+
   for_each = { for tbl in local.tables : "${tbl.dataset_id}-${tbl.name}" => tbl }
 
   dataset_id          = each.value.dataset_id
@@ -56,8 +61,4 @@ resource "google_bigquery_table" "table" {
       use_legacy_sql = try(view.value.use_legacy_sql, false)
     }
   }
-
-  depends_on = [
-    google_bigquery_dataset.dataset
-  ]
 }
